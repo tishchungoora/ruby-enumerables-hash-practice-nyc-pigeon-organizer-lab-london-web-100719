@@ -42,3 +42,5 @@ def nyc_pigeon_organizer(data)
   end
   pigeon_list
 end
+
+def nyc_pigeon_organizer(data) rhash = {} data.keys.map {|key| data[key].each {|item| item[1].map{|element| rhash[element] = {color: [], gender: [], lives: []} }}} data.keys.each {|key| data[key].each {|item| item[1].map {|name| rhash[name][key].push(item[0].to_s)}}} return rhash end h1 = nyc_pigeon_organizer(pigeon_data)
